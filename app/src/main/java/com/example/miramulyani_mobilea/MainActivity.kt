@@ -1,5 +1,6 @@
 package com.example.miramulyani_mobilea
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,10 +16,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when (v.id){
+        when (v?.id){
             R.id.btn_implicit -> {
-                val intent = intent()
-                intent.action
+                val message = "Hallo!"
+                val intent = Intent()
+                intent.action = Intent.ACTION_SEND
+                intent.putExtra(Intent.EXTRA_TEXT, message)
+                intent.type = "text/plain"
+                startActivity(intent)
             }
         }
     }

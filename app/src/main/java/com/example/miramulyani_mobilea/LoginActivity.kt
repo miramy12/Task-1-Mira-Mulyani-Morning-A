@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when (v.id){
+        when (v?.id){
            R.id.btn_Login -> {
                val intent = Intent(this@LoginActivity, MainActivity::class.java)
                startActivity(intent)
